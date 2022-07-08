@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+body,html {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  
+}
+
+.site-container {
+  min-height: 100vh;
+}
+
+
+main {
+  flex: 1;
+}
+
+.btn-primary, .btn-outline-primary {
+  background-color: #f0c040;
+  color: #0000;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  border: 1px solid #404040 ;
+  margin: 1rem;
+}
+
+.product img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.product-info {
+  padding: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.rating span {
+  color: #ffc000
+}
+
+.img-large {
+  max-width: 100%;
+}
+
+
+.nyheter-text {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  
+}
+
+
+.small-container {
+  max-width: 600px;
+}
+
+.products a {
+  text-transform: uppercase;
+ color: black;
+ text-decoration: none;
+
+}
+
+.checkout-steps {
+  border-bottom: .2rem solid black;
+  color: #a0a0a0;
+}
+.checkout-steps > div.active {
+  border-bottom: .2rem solid #f08000;
+  color: #f08000;
+  font-weight: bold;
+}
+.navbar-brand {
+  font-weight: bold;
+}
+.side-navbar {
+  width: 240px;
+  height: 100%;
+  position: absolute;
+  left: -300px;
+  background-color: #212529;
+  transition: 0.7s;
+  text-align: center;
+  
+
+}
+.site-container {
+  transition: 0.4s;
+  text-decoration: none;
+}
+.active-cont {
+  margin-left: 240px;
+}
+.active-nav {
+  left: 0;
+}
