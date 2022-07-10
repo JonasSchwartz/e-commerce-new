@@ -115,7 +115,7 @@ useEffect(() =>{
 
     <Form.Group>
         <div className='mb-3'>
-            <Button variant="primary" type="submit">
+            <Button className='bg-dark border-light' variant="primary" type="submit">
                 Fortsätt
             </Button>
         </div>

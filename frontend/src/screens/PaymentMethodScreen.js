@@ -59,9 +59,9 @@ const [paymentMethodName, setPaymentMethod] = useState(
         <Form.Check
         type="radio"
         id="Stripe"
-        label="Stripe"
-        value="Stripe"
-        checked={paymentMethodName ==='Stripe'}
+        label="Klarna"
+        value="Klarna"
+        checked={paymentMethodName ==='Klarna'}
         onChange={(e) => setPaymentMethod(e.target.value)}
         />
     </div>
