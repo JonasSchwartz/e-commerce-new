@@ -36,16 +36,20 @@ const reducer = (state, action) => {
 
 const prices = [
   {
-    name: '$1 to $50',
+    name: '1Kr till 50Kr',
     value: '1-50',
   },
   {
-    name: '$51 to $200',
+    name: '51Kr till 200Kr',
     value: '51-200',
   },
   {
-    name: '$201 to $1000',
+    name: '201Kr till 1000Kr',
     value: '201-1000',
+  },
+  {
+    name: '1000Kr till 3000 Kr',
+    value: '1000 - 3000',
   },
 ];
 
@@ -189,7 +193,7 @@ export default function SearchScreen() {
                     to={getFilterUrl({ rating: r.rating })}
                     className={`${r.rating}` === `${rating}` ? 'text-bold' : ''}
                   >
-                    <Rating caption={' & up'} rating={r.rating}></Rating>
+                    <Rating caption={' & uppåt'} rating={r.rating}></Rating>
                   </Link>
                 </li>
               ))}
