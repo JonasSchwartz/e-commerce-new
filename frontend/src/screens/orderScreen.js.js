@@ -103,7 +103,7 @@ export default function OrderScreen() {
           }
         );
         dispatch({ type: 'PAY_SUCCESS', payload: data });
-        toast.success('Order is paid');
+        toast.success('Orden Är Betald ');
       } catch (err) {
         dispatch({ type: 'PAY_FAIL', payload: getError(err) });
         toast.error(getError(err));
@@ -180,7 +180,7 @@ export default function OrderScreen() {
         }
       );
       dispatch({ type: 'DELIVER_SUCCESS', payload: data });
-      toast.success('Order is delivered');
+      toast.success('Orden är skickad ');
     } catch (err) {
       toast.error(getError(err));
       dispatch({ type: 'DELIVER_FAIL' });

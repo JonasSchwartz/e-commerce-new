@@ -7,7 +7,7 @@ import {Helmet} from "react-helmet-async"
 import LoadingBox from "../components/LoadingBox"
 import MessageBox from "../components/MessageBox"
 import Button from "react-bootstrap/Button"
-
+import {toast} from "react-toastify"
 
 
 const reducer = (state, action) => {
@@ -22,8 +22,24 @@ case 'FETCH_REQUEST':
         };
         case 'FETCH_FAIL':
             return {...state, loading: false, error: action.payload};
-            default:
-                return state;
+           
+
+                case 'DELETE_REQUEST':
+                    return {...state, loadingDelete: true, successDelete: false}
+                 case 'DELETE_SUCCESS':
+                    return {
+                        ...state,
+                        loadingDelete: false,
+                        successDelete: true
+                    }; 
+
+                    case 'DELETE_FAIL':
+                         return {...state, loadingDelete: true}; 
+                        
+                  case 'DELETE_RESET':
+                    return {...state, loadingDelete: false, successDelete: false}     
+                default:
+                    return state;     
 
 }
 }
@@ -34,7 +50,7 @@ export default function OrderListScreen() {
 const navigate = useNavigate();
 const {state} = useContext(Store)
 const {userInfo} = state;
-const [{loading, error, orders}, dispatch] = useReducer(reducer, {
+const [{loading, error, orders,loadingDelete,successDelete}, dispatch] = useReducer(reducer, {
     loading: true,
     error:''
 })
@@ -59,9 +75,35 @@ try {
 
 
 }
+};
+
+if(successDelete) {
+    dispatch({type:'DELETE_RESET'})
+} else {
+   fetchData() 
 }
-fetchData()
-},[userInfo])
+
+
+},[userInfo, successDelete])
+
+const deleteHandler = async (order) => {
+    if(window.confirm('Är du säker?')) {
+        try {
+            dispatch({type: 'DELETE_REQUEST'})
+            await axios.delete(`/api/orders/${order._id}`,{
+                headers: {Authorization: `Bearer ${userInfo.token}`}
+            })
+            toast.success('Order Borttagen')
+            dispatch({type: 'DELETE_SUCCESS'})
+        } catch (err) {
+            toast.error(getError(error))
+            dispatch ({
+                type: 'DELETE_FAIL'
+            })
+        }
+    }
+}
+
   return (
     <div>
         <Helmet>
@@ -69,6 +111,7 @@ fetchData()
         </Helmet>
 
         <h1>Ordrar</h1>
+        {loadingDelete && <LoadingBox></LoadingBox>}
         {loading ? (
         <LoadingBox></LoadingBox>
         ) : error ? (
@@ -104,7 +147,21 @@ fetchData()
                             onClick={() => {
                                 navigate(`/order/${order._id}`)
                             }}>Detaljer</Button>
+                            </td>
+                            
+                            <td>
+                            <Button
+                            type="button"
+                            variant="light"
+                            onClick={() => deleteHandler(order)}
+                              disabled= {!order.isPaid || !order.isDelievered}
+                                >
+                            Radera
+                                </Button>
+                                
+                           
                            </td>
+                           
                     </tr>
                 ))}
 
