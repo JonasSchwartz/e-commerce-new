@@ -122,6 +122,24 @@ orderRouter.get(
  );
 
 orderRouter.put(
+  '/:id/deliver',
+  isAuth,
+  expressAsyncHandler(async(req, res) => {
+    const order = await Order.findById(req.params.id)
+    if (order) {
+      order.isDelievered = true;
+      order.deliveredAt = Date.now()
+      await order.save()
+      res.send({message:'Order skickad'})
+    } else {
+      res.status(404).send({message:'Ordern hittades ej'})
+    }
+  }))
+
+
+ 
+
+orderRouter.put(
   '/:id/pay',
   isAuth,
   expressAsyncHandler(async(req,res) => {

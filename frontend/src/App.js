@@ -31,9 +31,7 @@ import AdminRoute from './components/AdminRoute';
 import ProductListScreen from './screens/ProductListScreen';
 import ProductEditScreen from './screens/ProductEditScreen.js';
 
-import UserListScreen from './screens/UserListScreen';
-import UserEditScreen from './screens/UserEditScreen';
-import MapScreen from './screens/MapScreen';
+
 import OrderListScreen from './screens/OrderListScreen';
 
 function App() {
@@ -95,7 +93,7 @@ function App() {
                   <Link to="/cart" className="nav-link">
                     Kundvagn
                     {cart.cartItems.length > 0 && (
-                      <Badge pill bg="danger">
+                      <Badge pill bg="success">
                         {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                       </Badge>
                     )}
@@ -119,7 +117,7 @@ function App() {
                     </NavDropdown>
                   ) : (
                     <Link className="nav-link" to="/signin">
-                      Sign In
+                     Logga In
                     </Link>
                   )}
                   {userInfo && userInfo.isAdmin && (
@@ -152,7 +150,7 @@ function App() {
         >
           <Nav className="flex-column text-white w-100 p-2">
             <Nav.Item>
-              <strong>Categories</strong>
+              <strong>Kategorier</strong>
             </Nav.Item>
             {categories.map((category) => (
               <Nav.Item key={category}>
@@ -182,14 +180,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-              <Route
-                path="/map"
-                element={
-                  <ProtectedRoute>
-                    <MapScreen />
-                  </ProtectedRoute>
-                }
-              />
+             
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
               <Route
                 path="/order/:id"
@@ -222,14 +213,7 @@ function App() {
                 }
               ></Route>
              
-              <Route
-                path="/admin/users"
-                element={
-                  <AdminRoute>
-                    <UserListScreen />
-                  </AdminRoute>
-                }
-              ></Route>
+            
               <Route
                 path="/admin/products"
                 element={
@@ -255,14 +239,7 @@ function App() {
                   </AdminRoute>
                 }
               ></Route>
-              <Route
-                path="/admin/user/:id"
-                element={
-                  <AdminRoute>
-                    <UserEditScreen />
-                  </AdminRoute>
-                }
-              ></Route>
+             
 
               <Route path="/" element={<HomeScreen />} />
             </Routes>
@@ -270,7 +247,7 @@ function App() {
         </main>
         <footer>
           <div className="text-center">©Jonas Schwartz 
-          <Link to="/">Startsidan</Link></div>
+          </div>
         </footer>
       </div>
     </BrowserRouter>

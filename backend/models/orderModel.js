@@ -38,7 +38,7 @@ const orderSchema = new mongoose.Schema(
                 isPaid: {type: Boolean, default: false},
                 paidAt: {type: Date},
                 isDelievered: {type: Boolean, default: false},
-                delieveredAt: {type: Date},
+                deliveredAt: {type: Date},
 
   
      

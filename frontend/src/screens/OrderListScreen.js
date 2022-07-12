@@ -94,9 +94,9 @@ fetchData()
                            <td>{order.createdAt.substring(0,10)}</td>
                            <td>{order.totalPrice}</td>
                            <td>{order.isPaid ? order.paidAt.substring(0,10):'Ej betald'}</td>
-                           <td>{order.isDelivered
-                           ? order.deliviredAt.substring(0,10) 
-                           : 'Ej skickad'}</td>
+                           <td>{order.isDelievered ? order.deliveredAt : 'Ej Skickad'}</td>
+                           
+                           
                            <td>
                             <Button
                             type="button"

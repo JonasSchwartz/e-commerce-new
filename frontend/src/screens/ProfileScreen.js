@@ -65,6 +65,8 @@ export default function ProfileScreen() {
             toast.error(getError(err))
         }
     }
+ 
+
   return (
     <div className='container small-container' >
         <Helmet>
@@ -107,17 +109,7 @@ export default function ProfileScreen() {
 
         </Form.Control>
     </Form.Group>
-    <Form.Group className="mb-3 " controllid="password">
-        <Form.Label>Bekräfta Lösenord</Form.Label>
-        <Form.Control
-            type='password'
-            
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            requrired
-        >
-
-        </Form.Control>
-    </Form.Group>
+    
     <div className='mb-3'>
         <Button className='bg-dark border-light' type="submit">Uppdatera</Button>
     </div>

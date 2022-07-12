@@ -63,9 +63,9 @@ const {userInfo} = state;
             <Form.Control type="password"required onChange={(e) =>setPassword(e.target.value)}/> 
         </Form.Group>
         <div className="mb-3">
-            <Button type="submit">Logga In</Button>
+            <Button className="bg-dark border-light" type="submit">Logga In</Button>
         </div>
-        <div className="mb-3">
+        <div className="mb-3 new-c">
             Ny Kund? {' '}
             <Link to={`/signup?redirect=${redirect}`}>Skapa Konto</Link>
         </div>
