@@ -33,6 +33,7 @@ import ProductEditScreen from './screens/ProductEditScreen.js';
 
 
 import OrderListScreen from './screens/OrderListScreen';
+import UserListScreen from './screens/UserListScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -72,7 +73,7 @@ function App() {
             : 'site-container d-flex flex-column'
         }
       >
-        <ToastContainer position="bottom-center" limit={1} />
+        <ToastContainer position="top-center" limit={1} />
         <header>
           <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
@@ -231,6 +232,17 @@ function App() {
                 }
               ></Route>
               
+              <Route
+                path="/admin/users"
+                element={
+                  <AdminRoute>
+                    <UserListScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+
+
+
               <Route
                 path="/admin/product/:id"
                 element={
