@@ -51,6 +51,10 @@ const prices = [
     name: '1000Kr till 3000 Kr',
     value: '1000 - 3000',
   },
+  {
+    name: '3000kr till 5000 Kr',
+    value: '3000 - 5000',
+  },
 ];
 
 export const ratings = [
@@ -193,7 +197,7 @@ export default function SearchScreen() {
                     to={getFilterUrl({ rating: r.rating })}
                     className={`${r.rating}` === `${rating}` ? 'text-bold' : ''}
                   >
-                    <Rating caption={' & uppåt'} rating={r.rating}></Rating>
+                    <Rating caption={'...'} rating={r.rating}></Rating>
                   </Link>
                 </li>
               ))}
@@ -202,7 +206,7 @@ export default function SearchScreen() {
                   to={getFilterUrl({ rating: 'all' })}
                   className={rating === 'all' ? 'text-bold' : ''}
                 >
-                  <Rating caption={' & up'} rating={0}></Rating>
+                  <Rating caption={'...'} rating={0}></Rating>
                 </Link>
               </li>
             </ul>
@@ -255,7 +259,7 @@ export default function SearchScreen() {
                 <MessageBox>Ingen Produkt hittades</MessageBox>
               )}
 
-              <Row>
+              <Row className='linkColor'>
                 {products.map((product) => (
                   <Col sm={6} lg={4} className="mb-3" key={product._id}>
                     <Product product={product}></Product>
@@ -263,7 +267,7 @@ export default function SearchScreen() {
                 ))}
               </Row>
 
-              <div>
+              <div className='search-color'>
                 {[...Array(pages).keys()].map((x) => (
                   <LinkContainer
                     key={x + 1}

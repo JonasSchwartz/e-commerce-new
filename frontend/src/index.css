@@ -65,7 +65,7 @@ main {
 }
 
 .products a {
-  text-transform: uppercase;
+  
  color: black;
  text-decoration: none;
 
@@ -99,7 +99,7 @@ main {
   color: white;
 }
 .side-navbar a:hover {
-  background-color: #f08000;
+  background-color: #ede3d894;
   color: white;
 }
 .site-container {
@@ -124,4 +124,21 @@ ul li a {
   text-decoration: none;
   transition: .5s;
 }
+
+.search-color a {
+  border-radius: 50%;
+  background-color: #4040403d;
+  color: black;
+}
+.linkColor a {
+  background-color: #f08000;
+  color: black;
+  text-decoration: none;
+}
+.linkColor a:hover {
+  color: black;
+  text-decoration: none;
+  
+}
+
 

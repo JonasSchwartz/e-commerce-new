@@ -19,7 +19,7 @@ const addToCartHandler = async (item) => {
     const quantity = existItem ? existItem.quantity + 1 : 1
     const {data} = await axios.get(`/api/products/${item._id}`);
     if (data.countInStock < quantity) {
-        window.alert("Sorry. product is out of stock");
+        window.alert("Ledsen, Produkten är slut");
         return;
     }
     ctxDispatch({

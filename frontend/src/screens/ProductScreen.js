@@ -66,7 +66,7 @@ const addToCartHandler = async () => {
 
 
 if (data.countInStock < quantity) {
-    window.alert("Sorry, Product is out of stock");
+    window.alert("Ledsen, Produkten är slut");
     return;
 }
 
@@ -142,7 +142,7 @@ return loading? (
                         {product.countInStock > 0 && (
                             <ListGroup.Item>
                                 <div className="d-grid">
-                                    <Button onClick={addToCartHandler} className="bg-dark border-none" variant="primary">
+                                    <Button className="bg-dark border-light" onClick={addToCartHandler} className="bg-dark border-none" variant="primary">
                                         Köp
                                     </Button>
                                 </div>
