@@ -16,6 +16,59 @@ userRouter.get(
     }))
 
 
+
+    userRouter.get(
+        '/:id',
+        isAuth,
+        isAdmin,
+        expressAsyncHandler(async(req, res) => {
+            const user = await User.findById(req.params.id);
+            if(user) {
+                res.send(user);
+            } else {
+                res.status(404)({message:'Användaren hittades inte'})
+            }
+        })
+    )
+
+userRouter.put(
+    '/:id',
+    isAuth,
+    isAdmin,
+    expressAsyncHandler(async(req,res) => {
+        const user = await User.findById(req.params.id);
+        if(user) {
+            user.name = req.body.name || user.name;
+            user.email = req.body.email || user.email;
+            user.isAdmin = Boolean (req.body.isAdmin);
+             const updatedUser = await user.save();
+             res.send({message:'Användaren uppdaterad', user: updatedUser})
+        } else {
+            res.status(404).send({message:'Användare hittades inte'})
+        }
+    })
+)
+
+userRouter.delete(
+    '/:id',
+    isAuth,
+    isAdmin,
+    expressAsyncHandler(async(req, res) => {
+        const user = await User.findById(req.params.id)
+        if(user) {
+            if(user.email === 'jonas@test.se') {
+                res.status(400).send({message:'Kan inte ta bort en admin'})
+                return;
+            } 
+            await user.remove();
+            res.send({message:'Användare Borttagen'})
+        } else {
+            res.status(404).send({message:'Användaren hittades ej'})
+        }
+    }))
+
+
+
 userRouter.post (
     '/signin', expressAsyncHandler(async (req,res) => {
         const user = await User.findOne({email: req.body.email});

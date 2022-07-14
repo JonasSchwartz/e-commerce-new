@@ -59,6 +59,7 @@ export default function ProfileScreen() {
             localStorage.setItem('userInfo',JSON.stringify(data));
             toast.success('Profil Uppdaterad')
         } catch (err) {
+              
             dispatch({
                 type:'FETCH_FAIL'
             });
@@ -109,6 +110,7 @@ export default function ProfileScreen() {
 
         </Form.Control>
     </Form.Group>
+    
     
     <div className='mb-3'>
         <Button className='bg-dark border-light' type="submit">Uppdatera</Button>

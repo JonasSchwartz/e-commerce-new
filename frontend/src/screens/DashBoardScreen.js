@@ -66,7 +66,7 @@ export default function DashboardScreen() {
                   <Card.Title>
                     {summary.users && summary.users[0]
                       ? summary.users[0].numUsers
-                      : 0}
+                      :  <MessageBox variant="danger">FEl</MessageBox>}
                   </Card.Title>
                   <Card.Text> Användare</Card.Text>
                 </Card.Body>

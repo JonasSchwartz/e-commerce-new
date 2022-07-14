@@ -94,7 +94,7 @@ const {userInfo} = state;
 
 
         <div className="mb-3">
-            <Button type="submit">Skapa Konto</Button>
+            <Button className="bg-dark border-light" type="submit">Skapa Konto</Button>
         </div>
         <div className="mb-3">
             Har du redan ett konto? {' '}
