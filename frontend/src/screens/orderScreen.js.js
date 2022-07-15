@@ -251,9 +251,9 @@ export default function OrderScreen() {
                         <Link to={`/product/${item.slug}`}>{item.name}</Link>
                       </Col>
                       <Col md={3}>
-                        <span>{item.quantity}</span>
+                        <span>{item.quantity} st</span>
                       </Col>
-                      <Col md={3}>{item.price}</Col>
+                      <Col md={3}>{item.price} kr</Col>
                     </Row>
                   </ListGroup.Item>
                 ))}

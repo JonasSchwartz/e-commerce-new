@@ -103,7 +103,7 @@ function App() {
                   {userInfo ? (
                     <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
                       <LinkContainer to="/profile">
-                        <NavDropdown.Item>Användare</NavDropdown.Item>
+                        <NavDropdown.Item>Min Profil</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/orderhistory">
                         <NavDropdown.Item>Orderhistorik</NavDropdown.Item>

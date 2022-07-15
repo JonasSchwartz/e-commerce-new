@@ -66,7 +66,7 @@ export default function DashboardScreen() {
                   <Card.Title>
                     {summary.users && summary.users[0]
                       ? summary.users[0].numUsers
-                      :  <MessageBox variant="danger">FEl</MessageBox>}
+                      :  <MessageBox variant="danger">Inga användare</MessageBox>}
                   </Card.Title>
                   <Card.Text> Användare</Card.Text>
                 </Card.Body>
@@ -80,7 +80,7 @@ export default function DashboardScreen() {
                       ? summary.orders[0].numOrders
                       : 0}
                   </Card.Title>
-                  <Card.Text> Ordrar</Card.Text>
+                  <Card.Text>Ordrar</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
@@ -121,7 +121,7 @@ export default function DashboardScreen() {
                       ): (
                         <Chart
                         width="100%"
-                        height="400px"
+                        height="550px"
                         chartType="PieChart"
                         loader={<div>Laddar...</div>}
                         data={[

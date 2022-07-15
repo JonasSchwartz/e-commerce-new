@@ -142,7 +142,7 @@ return loading? (
                         {product.countInStock > 0 && (
                             <ListGroup.Item>
                                 <div className="d-grid">
-                                    <Button className="bg-dark border-light" onClick={addToCartHandler} className="bg-dark border-none" variant="primary">
+                                    <Button className="bg-dark border-light" onClick={addToCartHandler}>
                                         Köp
                                     </Button>
                                 </div>
