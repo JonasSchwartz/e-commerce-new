@@ -35,6 +35,8 @@ import ProductEditScreen from './screens/ProductEditScreen.js';
 import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
+import HeroSlider from './components/HeroSlider';
+
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -62,6 +64,7 @@ function App() {
     fetchCategories();
   }, []);
   return (
+    
     <BrowserRouter>
       <div
         className={
@@ -166,6 +169,14 @@ function App() {
             ))}
           </Nav>
         </div>
+
+
+             
+              
+
+
+
+
         <main>
           <Container className="mt-3">
             <Routes>

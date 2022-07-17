@@ -9,6 +9,7 @@ import Product from "../components/product";
 import { Helmet } from "react-helmet-async";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
+import HeroSlider from "../components/HeroSlider";
 
 
 const reducer = (state,action) => {
@@ -55,6 +56,8 @@ fetchData();
         </Helmet>
         
             <h1 className="nyheter-text">Nyheter </h1>
+
+            <HeroSlider></HeroSlider>
 
 <div className="products">
 {
