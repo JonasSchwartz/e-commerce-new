@@ -44,7 +44,7 @@ const fetchData = async () => {
 
     
 
-    // setProducts(result.data);
+    
 
 };
 fetchData();
@@ -55,7 +55,7 @@ fetchData();
             <title>Jonas Nätbuik</title>
         </Helmet>
         
-            <h1 className="nyheter-text">Nyheter </h1>
+            <h1 className="nyheter-text">Nyheter - 2022 </h1>
 
             <HeroSlider></HeroSlider>
 

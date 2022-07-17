@@ -2,7 +2,7 @@
 
 1. Kör igång backend med npm run start
 2. Kör iång frontend med npm run start
-3. Skapa ett kontot.
+3. Skapa ett konto.
 4. Vill du ha adminbehörighet så logga in med: 
 Jocke@admin.se lösen: 12345
 

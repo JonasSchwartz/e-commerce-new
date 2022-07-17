@@ -140,7 +140,11 @@ ul li a {
   text-decoration: none;
   
 }
-
+.c-text {
+  font-size: bolder white ;
+  color: white;
+  text-align: center;
+}
 
 .b-img {
   

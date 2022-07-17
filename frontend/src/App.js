@@ -35,7 +35,7 @@ import ProductEditScreen from './screens/ProductEditScreen.js';
 import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
-import HeroSlider from './components/HeroSlider';
+
 
 
 function App() {
