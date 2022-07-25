@@ -48,7 +48,7 @@ function HeroSlider() {
         <Carousel.Caption>
           <h3 className='c-text'>Det senaste ifrån kända märken</h3>
           <p className='c-text'>
-            Hugo Boss - J - LindBergh
+            Hugo Boss - JLindBergh
           </p>
         </Carousel.Caption>
       </Carousel.Item>

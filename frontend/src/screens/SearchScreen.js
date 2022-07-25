@@ -82,7 +82,7 @@ export const ratings = [
 export default function SearchScreen() {
   const navigate = useNavigate();
   const { search } = useLocation();
-  const sp = new URLSearchParams(search); // /search?category=Shirts
+  const sp = new URLSearchParams(search); 
   const category = sp.get('category') || 'all';
   const query = sp.get('query') || 'all';
   const price = sp.get('price') || 'all';
@@ -140,10 +140,10 @@ export default function SearchScreen() {
       <Helmet>
         <title>Sök...</title>
       </Helmet>
-      <Row>
-        <Col md={3}>
+      <Row >
+        <Col className='list' md={3}>
           <h3>kategorier</h3>
-          <div>
+          <div >
             <ul>
               <li >
                 <Link 
